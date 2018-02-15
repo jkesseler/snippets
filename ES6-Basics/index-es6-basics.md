@@ -12,14 +12,9 @@ See `template-literals.md`
 See `functional-improvements.md`
 
 
-## Destructuring assignment
-```javascript
-const object = { a: 'value', b: args => ...args , c: {x: 'val', y:'val2'}};
-const {a, b, c: {x, y}} = object;
-```
+## Destructuring
+See `destructuring.md`
 
-### Array destructuring
-### Object destructuring
 
 ## Spread and Rest operator
 <!-- From .apply() to spread -->
@@ -37,4 +32,5 @@ const {a, b, c: {x, y}} = object;
 
 
 # Resources
-[MDN Web Docs: JavaScript References](https://developer.mozilla.org/nl/docs/Web/JavaScript)
+- [MDN Web Docs: JavaScript References](https://developer.mozilla.org/nl/docs/Web/JavaScript)
+- [Exploring ES6](http://exploringjs.com/es6/)
