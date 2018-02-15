@@ -22,13 +22,13 @@ See `destructuring.md`
 <!-- https://github.com/sebmarkbage/ecmascript-rest-spread -->
 
 ## Iterating and loops
-<!-- map, find, filter, some, every -->
+<!-- map, find, filter, some, every, for .. of -->
+<!-- generator, iterator, yield -->
+
 
 ## Modules
 <!-- http://exploringjs.com/es6/ch_modules.html -->
 <!-- solves global scope previously handled with closure patterns -->
-
-## Code quality with ESLint
 
 
 # Resources
