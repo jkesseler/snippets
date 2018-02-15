@@ -23,6 +23,59 @@ singleParam => expression;
 ```
 
 ## `this` and scope
+In ES5 `this` referes to the object a method is defined on:
+```javascript
+var Bear = {
+  name: 'Winnie the Pooh',
+
+  sayName: function() {
+    console.log(this.name); // Winnie the Pooh
+  }
+}
+```
+
+```javascript
+var Bear = {
+  name: 'Winnie the Pooh',
+  foods: ['honey', 'strawberries'],
+
+  eat: function() {
+    this.foods.forEach(function(food) {
+      console.log(this.name + ' eats ' + food)
+    })
+  }
+}
+
+Bear.eat();
+
+// [object Window] eats honey
+// [object Window] eats strawberries
+```
+`this` has fallen out of scope and now belongs to the outer object (in this case Window)
+That is because in ES5 `this` always references the owner of the function it is in.
+
+
+In ES6 lambda functions use lexical scoping, `this` refers to it’s current surrounding scope
+```javascript
+const Bear = {
+  name: 'Winnie the Pooh',
+  foods: ['honey', 'strawberries'],
+
+  eat() {
+    // `this` references the the object
+    this.foods.forEach((food) => {
+      // `this` references tho the method
+      console.log(this.name + ' eats ' + food)
+    })
+  }
+}
+
+Bear.eat();
+
+// Winnie the Pooh eats honey
+// Winnie the Pooh eats strawberries
+```
+
 ## Rest parameters
 ```javaScript
 function (param1, param2, ...theArgs) {
@@ -50,6 +103,7 @@ var obj = {
 ```
 
 ```javascript
+// ES6
 const obj = {
     foo() {
         ···
