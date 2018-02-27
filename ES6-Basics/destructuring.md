@@ -10,7 +10,6 @@ console.log(firstName); // John
 console.log(lastName); // Wilkins
 ```
 
-
 Also works on arrays
 ```javascript
 const person  = [ 'John', 'Wilkins' ];
@@ -26,6 +25,7 @@ Pick and choose what values to extract:
 console.log(a); // 1
 console.log(b); // 2
 ```
+
 Using a rest operator
 ```javascript
 [a, b, ...theRestOfTheValues] = [1, 2, 3, 4, 5];
@@ -40,4 +40,28 @@ console.log(theRestOfTheValues); // [3, 4, 5]
 ```javascript
 const object = { a: 'value', b: args => ...args , c: {x: 'val', y:'val2'}};
 const {a, b, c: {x, y}} = object;
+```
+
+## Nested destructuring
+```javascript
+const App = {
+    model: {
+        User: function(){ .. }
+    }
+};
+
+// instead of: var User = App.model.User;
+const { model: { User } } = App;
+```
+
+A more complex example
+```javascript
+var a1 = [ 1, [2, 3, 4], 5 ];
+var o1 = { x: { y: { z: 6 } } };
+
+var [ a, [ b, c, d ], e ] = a1;
+var { x: { y: { z: w } } } = o1;
+
+console.log( a, b, c, d, e );        // 1 2 3 4 5
+console.log( w );                    // 6
 ```
