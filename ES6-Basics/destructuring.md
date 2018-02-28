@@ -38,8 +38,8 @@ console.log(theRestOfTheValues); // [3, 4, 5]
 
 ## Destructuring assignment
 ```javascript
-const object = { a: 'value', b: args => ...args , c: {x: 'val', y:'val2'}};
-const {a, b, c: {x, y}} = object;
+const object = { a: 'value', b: args => ...args , c: { x: 'val', y:'val2' } };
+const {a, b, c: { x, y } } = object;
 ```
 
 ## Nested destructuring
@@ -54,14 +54,14 @@ const App = {
 const { model: { User } } = App;
 ```
 
-A more complex example
 ```javascript
-var a1 = [ 1, [2, 3, 4], 5 ];
-var o1 = { x: { y: { z: 6 } } };
-
-var [ a, [ b, c, d ], e ] = a1;
-var { x: { y: { z: w } } } = o1;
-
+const a1 = [ 1, [ 2, 3, 4 ], 5 ];
+const [ a, [ b, c, d ], e ] = a1;
 console.log( a, b, c, d, e );        // 1 2 3 4 5
+
+const o1 = { x: { y: { z: 6 } } };
+const { x: { y: { z: w } } } = o1;
 console.log( w );                    // 6
+
+
 ```
