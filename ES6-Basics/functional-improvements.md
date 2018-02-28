@@ -1,17 +1,17 @@
 # Functional improvements
 ## Arrow functions
 Arrow function are syntactically shorter then [function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function)
-They don't have their own `this`, `arguments`, `super` or `new.target`; They cannot be used as constructors and are bet suited as non-method functions
+They don't have their own `this`, `arguments`, `super` or `new.target`; They cannot be used as constructors and are best suited as non-method functions
 
 Basic syntax:
 ```javascript
 (param1, param2) => { statements };
 ```
-If there is only on expression the brackets are optional
+If there is only one expression the brackets are optional and return is implied.
 ```javascript
 // These two are the same
 (param1, param2) => expression;
-(param1, param2) => {return expression};
+(param1, param2) => { return expression };
 ```
 
 Parentheses are optional if there is only one parameter
@@ -23,7 +23,7 @@ singleParam => expression;
 ```
 
 ## `this` and scope
-In ES5 `this` referes to the object a method is defined on:
+In ES5 `this` refers to the object a method is defined on:
 ```javascript
 var Bear = {
   name: 'Winnie the Pooh',
@@ -62,9 +62,9 @@ const Bear = {
   foods: ['honey', 'strawberries'],
 
   eat() {
-    // `this` references the the object
+    // `this` references the object
     this.foods.forEach((food) => {
-      // `this` references tho the method
+      // `this` references the method
       console.log(this.name + ' eats ' + food)
     })
   }
@@ -77,11 +77,23 @@ Bear.eat();
 ```
 
 ## Rest parameters
-```javaScript
-function (param1, param2, ...theArgs) {
+```javascript
+function (param1, param2, ...restArgs) {
 
 }
 ```
+If the last named argument of a function is prefixed with `...` (spread operator),
+it becomes an array whose values from 0 to `restArgs.length` are passed as
+actual arguments to the function.
+
+```javascript
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map(element => multiplier * element;);
+}
+
+console.log(multiply(2, 16, 100)); // 32, 200
+```
+
 ## default arguments
 ```javascript
 fN(param = x, param2 = y);
