@@ -1,4 +1,4 @@
-#No so common language features
+# Not so common language features
 [pipeline operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Pipeline_operator)
 
 ```javascript
