@@ -96,8 +96,15 @@ console.log(multiply(2, 16, 100)); // 32, 200
 
 ## default arguments
 ```javascript
-fN(param = x, param2 = y);
-fN({a: b, c: d});
+function append(value, array=[]) {
+  return array.push(value);
+}
+
+append(1); // [1]
+append(2); // [2]
+
+const arr = [1];
+append(2, arr); // [1, 2]
 ```
 
 
